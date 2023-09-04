@@ -1,4 +1,4 @@
-import MainLayout from '@/app/layouts/MainLayout'
+import MainLayout from '@/app/componets/dashboard/MainLayout'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'

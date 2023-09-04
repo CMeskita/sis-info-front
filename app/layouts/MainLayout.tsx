@@ -1,15 +1,20 @@
 import { MainHeader } from '@/app/layouts/MainHeader'
-import React from 'react'
+import React, { ReactNode } from 'react'
 
-export function MainLayout  ( {children}: {
-  children: React.ReactNode
-}) {
-  return (
-    <div className=' bg-primaryWhite'>
-    <MainHeader />   
-     <h1>MainLayout</h1>
-    <main>{children}</main></div>
-  )
+interface MainLayoutProps
+{
+    children:ReactNode
 }
 
-export default MainLayout
+export default function  MainLayout  ({children}:MainLayoutProps)  {
+  return (
+    <div className='h-full bg-primaryWhite'>
+    <MainHeader/>
+   
+    <main>
+
+    </main>
+    
+    </div>
+  )
+}

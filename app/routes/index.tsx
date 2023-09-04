@@ -1,5 +1,5 @@
 
-import {MainLayout} from '@/app/layouts/MainLayout';
+import {MainLayout} from '@/app/routes/dashboard/page';
 import {BrowserRouter,Routes,Route,} from ' react-router-dom';
 
 

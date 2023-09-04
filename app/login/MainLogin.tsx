@@ -1,4 +1,5 @@
 "use client";
+
 import { Button} from '@/app/componets/Buttons/Button'
 import React from 'react'
 import { useState } from 'react'
@@ -7,7 +8,7 @@ import{z} from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Cards } from '@/app/componets/Cards/Cards'
 import { baseVariants, cn } from '@/app/componets/Buttons/baseButtonVariants'
-import Link from 'next/link';
+import {useRouter} from 'next/navigation'
 
 //vvalidando campos
 const createLoginSchema=z.object({
@@ -23,6 +24,7 @@ type createLoginFormData=z.infer<typeof createLoginSchema>
 
 export function MainLogin()
 {
+  const router=useRouter()
     //criando constantes de validação
   const [output, SetOutput]=useState('')
   const {register,handleSubmit,formState:{errors}}=useForm<createLoginFormData>({
@@ -30,12 +32,13 @@ export function MainLogin()
   
 //criando função para receber os daods
  //console.log(output);
-  function acessLogin(data:createLoginFormData ){ 
+function acessLogin(data:createLoginFormData ){ 
  if(data.password=='123456')
  {
  SetOutput(JSON.stringify(data,null, 2))
+router.push('/routes/dashboard')
  }
-  
+ 
 }
   return (
      
